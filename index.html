@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="rus">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">
+        <div class="container">
+            <img src="pic1.jpg" class="first-image">
+            <div class="header-text">
+                <p>Валова София</p>
+                <h6>Junior webdeveloper</h6>
+            </div>
+            <p class="header-description">20 лет, Москва<br>Студентка 3-го курса<br>МГТУ им. Баумана<br>Backend: Python</p>
+            <p class="contacts"><span>Контакты</span><br>tg: @ssofiica<br>s.valova2016@yandex.ru</p>
+        </div>
+    </div>
+    <div class="tab-titles">
+        <p class="tab-links active-link" onclick="opentab('education')">Образование</p>
+        <p class="tab-links" onclick="opentab('job')">Опыт работы</p>
+        <p class="tab-links" onclick="opentab('skills')">Знания</p>
+        <p class="tab-links" onclick="opentab('aboutme')">О себе</p>
+    </div>
+    <div class="space">
+        <div class="tab-contents active-tab" id="education">
+            <p class="row-1">МГТУ имени Баумана<br><br><span>Факультет<br><br><br>Кафедра</span></p>
+            <p class="row-2">2021-2025<br><br><span>Информатика, искусственный интелект и системы управления<br><br>Системы обработки информации и управления</span></p>
+        </div>
+        <div class="tab-contents" id="job">
+            <p class="row-1 dif">АО "ДКС"<br><span>Стажёр в отделе<br>событийного маркетинга</span></p>
+            <p class="row-2"><span>август 2022<br>Москва</span></p>
+        </div>
+        <div class="tab-contents" id="skills">
+            <ul>
+                <li><span>Языки</span><br>C++, Python, JavaScript, HTML, CSS</li>
+                <li><span>Теория</span><br>ООП, алгоритмы и структруы данных, UX/UI</li>
+                <li><span>Базы данных</span><br>PostgreSQL</li>
+                <li><span>Софт</span><br>Git, Docker</li>
+            </ul>
+        </div>
+        <div class="tab-contents" id="aboutme">
+            <ul>
+                <li><span>Хобби</span><br>Настольный теннис (Чемпионка Твери и Тверской области)<br>
+                Графический дизайн и видеомонтаж (Figma, Blender, Adobe Premiere Pro)</li>
+                <li><span>Качества</span><br>Спокойна и уважительна в общении с людьми
+                    <br>Грамотная устная и письменная речь<br>Быстро учусь и усваиваю информации, усидчива</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        
+    </script>
+  </body>
+</html>
